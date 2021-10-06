@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   input_to_stack.c                                   :+:      :+:    :+:   */
+/*   has_doubles.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/06 15:07:07 by amohiam           #+#    #+#             */
+/*   Created: 2021/10/06 15:06:36 by amohiam           #+#    #+#             */
 /*   Updated: 2021/10/06 15:27:46 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*input_to_stack(const char **input, int n)
+int	has_doubles(int	*arr, int size)
 {
-	int		i;
-	int		*result;
+	int	i;
+	int	j;
 
 	i = 0;
-	result = (int *)malloc(sizeof(int) * n);
-	if (!result || n <= 0)
-		return (NULL);
-	while (i < n)
+	j = 0;
+	while (i < size)
 	{
-		if (is_number(input[i]) != 1)
+		while (j < i)
 		{
-			free(result);
-			return (NULL);
+			if (arr[j] == arr[i])
+				return (1);
+			j++;
 		}
-		result[i] = ft_atoi(input[i]);
 		i++;
+		j = 0;
 	}
-	return (result);
+	return (0);
 }
