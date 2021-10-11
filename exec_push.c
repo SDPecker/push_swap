@@ -6,34 +6,36 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:06:55 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/06 15:27:46 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/11 17:27:47 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	exec_px(int *dst, int *src, int size_dst, int size_src)
+#include "push_swap.h"
+
+void	exec_px(stack dst, stack src)
 {
 	int	i;
 	int	buf;
 
 	i = 0;
 	buf = 0;
-	if (!size_src)
+	if (!src.size)
 	{
-		buf = src[0];
-		while (i < size_src - 1)
+		buf = src.array[0];
+		while (i < src.size - 1)
 		{
-			src[i] = src[i + 1];
+			src.array[i] = src.array[i + 1];
 			i++;
 		}
-		src[i] = 0;
-		size_src--;
-		size_dst++;
-		i = size_dst;
+		src.array[i] = 0;
+		src.size--;
+		dst.size++;
+		i = dst.size;
 		while (i > 0)
 		{
-			dst[i] = dst[i - 1];
+			dst.array[i] = dst.array[i - 1];
 			i--;
 		}
-		dst[0] = buf;
+		dst.array[0] = buf;
 	}
 }

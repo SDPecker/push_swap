@@ -1,30 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_number.c                                        :+:      :+:    :+:   */
+/*   max_min_ind.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/06 15:07:13 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/11 17:27:47 by amohiam          ###   ########.fr       */
+/*   Created: 2021/10/11 14:43:25 by amohiam           #+#    #+#             */
+/*   Updated: 2021/10/11 15:17:34 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_number(const char *ln)
+int	get_max_ind(stack st)
 {
+	int	res;
 	int	i;
 
+	res = 0;
 	i = 1;
-	if (!ft_isdigit(ln[0]) && ln[0] != '-')
-		return (0);
-	if (ln[0] == '-')
-		i++;
-	while (ln[i])
+	while (i < st.size)
 	{
-		if (!ft_isdigit(ln[i++]))
-			return (0);
+		if (st.array[i] > st.array[res])
+			res = i;
+		i++;
 	}
-	return (1);
+	return (res);
+}
+
+int	get_min_ind(stack st)
+{
+	int	res;
+	int	i;
+
+	res = 0;
+	i = 1;
+	while (i < st.size)
+	{
+		if (st.array[i] < st.array[res])
+			res = i;
+		i++;
+	}
+	return (res);
 }

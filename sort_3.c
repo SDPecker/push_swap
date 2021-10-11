@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_number.c                                        :+:      :+:    :+:   */
+/*   sort_3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/06 15:07:13 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/11 17:27:47 by amohiam          ###   ########.fr       */
+/*   Created: 2021/10/11 15:37:43 by amohiam           #+#    #+#             */
+/*   Updated: 2021/10/11 16:13:30 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_number(const char *ln)
+void	sort_3(stack st)
 {
-	int	i;
-
-	i = 1;
-	if (!ft_isdigit(ln[0]) && ln[0] != '-')
-		return (0);
-	if (ln[0] == '-')
-		i++;
-	while (ln[i])
+	if (get_min_ind(st) == 0)
 	{
-		if (!ft_isdigit(ln[i++]))
-			return (0);
+		if (get_max_ind(st) == 1)
+			write(1, "rra\nsa\n", 7);
 	}
-	return (1);
+	else if (get_max_ind(st) == 0)
+	{
+		if (get_min_ind(st) == 1)
+			write(1, "rra\nrra\n", 8);
+		else
+			write(1, "sa\nrra\n", 7);
+	}
+	else
+	{
+		if (get_min_ind(st) == 1)
+			write (1, "sa\n", 3);
+		else
+			write (1, "rra\n", 4);
+	}
 }

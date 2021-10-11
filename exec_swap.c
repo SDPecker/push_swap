@@ -6,24 +6,26 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:06:43 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/06 15:27:46 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/11 17:46:37 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	exec_sx(int *s1, int size)
+#include "push_swap.h"
+
+void	exec_sx(stack s1)
 {
 	int	buf;
-	buf = s1[0];
+	buf = s1.array[0];
 
-	if (size > 1)
+	if (s1.size > 1)
 	{
-		s1[0] = s1[1];
-		s1[1] = buf;
+		s1.array[0] = s1.array[1];
+		s1.array[1] = buf;
 	}
 }
 
-void	exec_ss(int *s1, int *s2)
+void	exec_ss(stack s1, stack s2)
 {
-	exec_s(s1);
-	exec_s(s2);
+	exec_sx(s1);
+	exec_sx(s2);
 }

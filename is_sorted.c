@@ -6,9 +6,11 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 16:10:20 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/06 16:27:45 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/11 12:56:16 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 int	is_sorted(int *arr, int size)
 {

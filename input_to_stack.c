@@ -6,30 +6,43 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:07:07 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/06 15:27:46 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/11 17:50:29 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*input_to_stack(const char **input, int n)
+stack	input_to_stack(char **input, int n)
 {
 	int		i;
-	int		*result;
+	stack	result;
 
 	i = 0;
-	result = (int *)malloc(sizeof(int) * n);
-	if (!result || n <= 0)
-		return (NULL);
+	result.size = n;
+	result.array = (int *)malloc(sizeof(int) * n);
+	if (!result.array || n <= 0)
+	{
+		free_stack(result);
+		return (result);
+	}
 	while (i < n)
 	{
-		if (is_number(input[i]) != 1)
+		if (!is_number(input[i]))
 		{
-			free(result);
-			return (NULL);
+			free_stack(result);
+			return (result);
 		}
-		result[i] = ft_atoi(input[i]);
+		result.array[i] = ft_atoi(input[i]);
 		i++;
 	}
+	if (has_doubles(result))
+		free_stack(result);
 	return (result);
+}
+
+void	free_stack(stack st)
+{
+	free(st.array);
+	st.array = 0;
+	st.size = 0;
 }

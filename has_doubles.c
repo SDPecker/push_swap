@@ -6,24 +6,24 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:06:36 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/06 15:27:46 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/11 15:10:57 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	has_doubles(int	*arr, int size)
+int	has_doubles(stack st)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 0;
-	while (i < size)
+	while (i < st.size)
 	{
 		while (j < i)
 		{
-			if (arr[j] == arr[i])
+			if (st.array[j] == st.array[i])
 				return (1);
 			j++;
 		}
