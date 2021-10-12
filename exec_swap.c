@@ -12,20 +12,33 @@
 
 #include "push_swap.h"
 
-void	exec_sx(stack s1)
+void	exec_sa(stack a)
 {
 	int	buf;
-	buf = s1.array[0];
+	buf = a.array[0];
 
-	if (s1.size > 1)
+	if (a.size > 1)
 	{
-		s1.array[0] = s1.array[1];
-		s1.array[1] = buf;
+		a.array[0] = a.array[1];
+		a.array[1] = buf;
 	}
+	write(1, "sa\n", 3);
+}
+void	exec_sb(stack b)
+{
+	int	buf;
+	buf = b.array[0];
+
+	if (b.size > 1)
+	{
+		b.array[0] = b.array[1];
+		b.array[1] = buf;
+	}
+	write(1, "sb\n", 3);
 }
 
-void	exec_ss(stack s1, stack s2)
+void	exec_ss(stack a, stack b)
 {
-	exec_sx(s1);
-	exec_sx(s2);
+	exec_sa(a);
+	exec_sb(b);
 }

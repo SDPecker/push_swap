@@ -12,50 +12,90 @@
 
 #include "push_swap.h"
 
-void	exec_rx(stack s1)
+void	exec_ra(stack a)
 {
 	int	i;
 	int	buf;
 
 	i = 0;
-	buf = s1.array[0];
-	if (s1.size >= 2)
+	buf = a.array[0];
+	if (a.size >= 2)
 	{
-		while (i < s1.size - 1)
+		while (i < a.size - 1)
 		{
-			s1.array[i] = s1.array[i + 1];
+			a.array[i] = a.array[i + 1];
 			i++;
 		}
-		s1.array[i] = buf;
+		a.array[i] = buf;
 	}
+	write(1, "ra\n", 3);
 }
 
-void	exec_rrx(stack s1)
+void	exec_rb(stack b)
 {
 	int	i;
 	int	buf;
 
-	i = s1.size - 1;
-	buf = s1.array[s1.size - 1];
-	if (s1.size >= 2)
+	i = 0;
+	buf = b.array[0];
+	if (b.size >= 2)
+	{
+		while (i < b.size - 1)
+		{
+			b.array[i] = b.array[i + 1];
+			i++;
+		}
+		b.array[i] = buf;
+	}
+	write(1, "rb\n", 3);
+}
+
+void	exec_rra(stack a)
+{
+	int	i;
+	int	buf;
+
+	i = a.size - 1;
+	buf = a.array[a.size - 1];
+	if (a.size >= 2)
 	{
 		while (i > 0)
 		{
-			s1.array[i] = s1.array[i - 1];
+			a.array[i] = a.array[i - 1];
 			i--;
 		}
-		s1.array[i] = buf;
+		a.array[i] = buf;
 	}
+	write(1, "rra\n", 4);
 }
 
-void	exec_rr(stack s1, stack s2)
+void	exec_rrb(stack b)
 {
-	exec_rx(s1);
-	exec_rx(s2);
+	int	i;
+	int	buf;
+
+	i = b.size - 1;
+	buf = b.array[b.size - 1];
+	if (b.size >= 2)
+	{
+		while (i > 0)
+		{
+			b.array[i] = b.array[i - 1];
+			i--;
+		}
+		b.array[i] = buf;
+	}
+	write(1, "rrb\n", 4);
 }
 
-void	exec_rrr(stack s1, stack s2)
+void	exec_rr(stack a, stack b)
 {
-	exec_rrx(s1);
-	exec_rrx(s2);
+	exec_ra(a);
+	exec_rb(b);
+}
+
+void	exec_rrr(stack a, stack b)
+{
+	exec_rra(a);
+	exec_rrb(b);
 }

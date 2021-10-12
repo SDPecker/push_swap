@@ -19,7 +19,8 @@ int	*array;
 int	size;
 }stack;
 
-void	exec_px(stack dst, stack src);
+void	exec_pa(stack a, stack b);
+void	exec_pb(stack a, stack b);
 void	exec_rx(stack s1);
 void	exec_rrx(stack s1);
 void	exec_rr(stack s1, stack s2);

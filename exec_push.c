@@ -12,30 +12,60 @@
 
 #include "push_swap.h"
 
-void	exec_px(stack dst, stack src)
+void	exec_pa(stack a, stack b)
 {
 	int	i;
 	int	buf;
 
 	i = 0;
 	buf = 0;
-	if (!src.size)
+	if (!b.size)
 	{
-		buf = src.array[0];
-		while (i < src.size - 1)
+		buf = b.array[0];
+		while (i < b.size - 1)
 		{
-			src.array[i] = src.array[i + 1];
+			b.array[i] = b.array[i + 1];
 			i++;
 		}
-		src.array[i] = 0;
-		src.size--;
-		dst.size++;
-		i = dst.size;
+		b.array[i] = 0;
+		b.size--;
+		a.size++;
+		i = a.size;
 		while (i > 0)
 		{
-			dst.array[i] = dst.array[i - 1];
+			a.array[i] = a.array[i - 1];
 			i--;
 		}
-		dst.array[0] = buf;
+		a.array[0] = buf;
 	}
+	write(1, "pa\n", 3);
+}
+
+void	exec_pb(stack a, stack b)
+{
+	int	i;
+	int	buf;
+
+	i = 0;
+	buf = 0;
+	if (!a.size)
+	{
+		buf = a.array[0];
+		while (i < a.size - 1)
+		{
+			a.array[i] = a.array[i + 1];
+			i++;
+		}
+		a.array[i] = 0;
+		a.size--;
+		b.size++;
+		i = b.size;
+		while (i > 0)
+		{
+			b.array[i] = b.array[i - 1];
+			i--;
+		}
+		b.array[0] = buf;
+	}
+	write(1, "pb\n", 3);
 }

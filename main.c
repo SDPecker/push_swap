@@ -27,6 +27,7 @@ int	main(int argc, char **argv)
 	}
 	if (argc == 3)
 		sort_3(stack_a);
+		
 	free(stack_a.array);
 	free(stack_b.array);
 	return (1);

@@ -17,20 +17,37 @@ void	sort_3(stack st)
 	if (get_min_ind(st) == 0)
 	{
 		if (get_max_ind(st) == 1)
+		{
 			write(1, "rra\nsa\n", 7);
+			exec_rrx(st);
+			exec_sx(st);
+		}
 	}
 	else if (get_max_ind(st) == 0)
 	{
 		if (get_min_ind(st) == 1)
-			write(1, "rra\nrra\n", 8);
+			exec_ra(st);
 		else
-			write(1, "sa\nrra\n", 7);
+		{
+			exec_sa(st);
+			exec_rra(st);
+		}
 	}
 	else
 	{
 		if (get_min_ind(st) == 1)
-			write (1, "sa\n", 3);
+			exec_sa(st);
 		else
-			write (1, "rra\n", 4);
+			exec_rra(st);
 	}
+}
+
+void	sort_5(stack a, stack b)
+{
+	exec_pb(a, b);
+	exec_pb(a, b);
+	sort_3(a);
+	if (get_max_ind(b) == 0)
+		exec_sb(b);
+	
 }
