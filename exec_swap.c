@@ -6,38 +6,38 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:06:43 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/11 17:46:37 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/14 16:53:00 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	exec_sa(stack a)
+void	exec_sa(stack *a)
 {
 	int	buf;
-	buf = a.array[0];
+	buf = a->array[0];
 
-	if (a.size > 1)
+	if (a->size > 1)
 	{
-		a.array[0] = a.array[1];
-		a.array[1] = buf;
+		a->array[0] = a->array[1];
+		a->array[1] = buf;
 	}
 	write(1, "sa\n", 3);
 }
-void	exec_sb(stack b)
+void	exec_sb(stack *b)
 {
 	int	buf;
-	buf = b.array[0];
+	buf = b->array[0];
 
-	if (b.size > 1)
+	if (b->size > 1)
 	{
-		b.array[0] = b.array[1];
-		b.array[1] = buf;
+		b->array[0] = b->array[1];
+		b->array[1] = buf;
 	}
 	write(1, "sb\n", 3);
 }
 
-void	exec_ss(stack a, stack b)
+void	exec_ss(stack *a, stack *b)
 {
 	exec_sa(a);
 	exec_sb(b);

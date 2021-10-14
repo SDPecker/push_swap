@@ -6,7 +6,7 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:07:13 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/11 17:27:47 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/14 18:42:01 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,15 @@ int	is_number(const char *ln)
 	int	i;
 
 	i = 1;
-	if (!ft_isdigit(ln[0]) && ln[0] != '-')
+	if (ln[0] < '0' && ln[0] > '9' && ln[0] != '-')
 		return (0);
 	if (ln[0] == '-')
 		i++;
 	while (ln[i])
 	{
-		if (!ft_isdigit(ln[i++]))
+		if (ln[i] < '0' && ln[i] > '9')
 			return (0);
+		i++;
 	}
 	return (1);
 }

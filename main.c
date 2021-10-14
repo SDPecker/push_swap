@@ -6,7 +6,7 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:07:38 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/11 17:03:36 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/14 18:37:09 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	if (argc == 3)
-		sort_3(stack_a);
+		sort_3(&stack_a);
 		
 	free(stack_a.array);
 	free(stack_b.array);

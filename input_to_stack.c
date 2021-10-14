@@ -6,7 +6,7 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:07:07 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/11 17:50:29 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/14 18:59:05 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ stack	input_to_stack(char **input, int n)
 			free_stack(result);
 			return (result);
 		}
-		result.array[i] = ft_atoi(input[i]);
+		result.array[i] = new_atoi(input[i]);
 		i++;
 	}
 	if (has_doubles(result))
