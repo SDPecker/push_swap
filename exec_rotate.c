@@ -6,18 +6,20 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:06:47 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/15 18:58:06 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/17 20:02:35 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	exec_ra(stack *a)
+stack	exec_ra(stack *a)
 {
-	int	i;
-	int	buf;
+	int		i;
+	int		buf;
+	stack	*res;
 
 	i = 0;
+	res = a;
 	buf = a->array[0];
 	if (a->size >= 2)
 	{
@@ -29,6 +31,7 @@ void	exec_ra(stack *a)
 		a->array[i] = buf;
 	}
 	write(1, "ra\n", 3);
+	return(*res);
 }
 
 void	exec_rb(stack *b)

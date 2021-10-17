@@ -6,7 +6,7 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:07:44 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/17 15:37:04 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/17 20:02:35 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	size;
 
 void	exec_pa(stack *a, stack *b);
 void	exec_pb(stack *a, stack *b);
-void	exec_ra(stack *a);
+stack	exec_ra(stack *a);
 void	exec_rb(stack *b);
 void	exec_rra(stack *a);
 void	exec_rrb(stack *b);
@@ -39,3 +39,5 @@ int		has_doubles(stack st);
 int		get_max_ind(stack st);
 int		get_min_ind(stack st);
 void	sort_3(stack *st);
+
+void	print_stack(stack st);

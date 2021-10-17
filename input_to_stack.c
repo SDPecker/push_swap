@@ -6,7 +6,7 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:07:07 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/17 14:29:54 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/17 19:45:02 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,13 @@ stack	input_to_stack(char **input, int n)
 	stack	result;
 
 	i = 0;
-	result.size = n;
+	result.size = n - 1;
 	result.array = (int *)malloc(sizeof(int) * n);
-	if (n <= 0)
+	while (i < result.size)
 	{
-		free_stack(&result);
-		return (result);
-	}
-	while (i < n)
-	{
-		if (!is_number(input[i]))
-		{
-			free_stack(&result);
-			return (result);
-		}
 		result.array[i] = new_atoi(input[i + 1]);
 		i++;
 	}
-	if (has_doubles(result))
-		free_stack(&result);
 	return (result);
 }
 
