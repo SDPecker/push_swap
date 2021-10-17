@@ -1,8 +1,26 @@
 #include "push_swap.h"
-stack	simplify(stack st)
+void	simplify(stack *st)
 {
-	stack	res;
+	int		*res;
+	int		i;
+	int		j;
+	int		val;
 
-	res.array = (int)malloc(sizeof(st));
-	res.size = st.size;
+	res = (int *)malloc(sizeof(int) * st->size);
+	i = 0;
+	val = 0;
+	while (i < st->size)
+	{
+		while (j < st->size)
+		{
+			if (st->array[j] > st->array[i])
+				val++;
+			j++;
+		}
+		res[i] = val;
+		i++;
+		val = 0;
+	}
+	free(st->array);
+	st->array = res;
 }

@@ -1,3 +1,5 @@
+#include "push_swap.h"
+
 int	new_atoi(char *ln)
 {
 	int	i;

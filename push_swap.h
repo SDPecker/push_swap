@@ -6,7 +6,7 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:07:44 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/14 16:55:15 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/17 15:37:04 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ void	exec_sb(stack *a);
 void	exec_ss(stack *a, stack *b);
 
 int		is_number(const char *ln);
+int		new_atoi(char *ln);
 stack	input_to_stack(char **input, int n);
-void	free_stack(stack st);
+int		input_correct(char **input, int	n);
+void	free_stack(stack *st);
 int		has_doubles(stack st);
 int		get_max_ind(stack st);
 int		get_min_ind(stack st);

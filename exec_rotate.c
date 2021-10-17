@@ -6,7 +6,7 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:06:47 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/14 18:38:16 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/15 18:58:06 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	exec_rrb(stack *b)
 
 	i = b->size - 1;
 	buf = b->array[b->size - 1];
-	if (&b->size >= 2)
+	if (b->size >= 2)
 	{
 		while (i > 0)
 		{
