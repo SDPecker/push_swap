@@ -6,7 +6,7 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 14:43:25 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/18 22:38:58 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/18 23:02:44 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ int	get_min_ind(stack st)
 
 int	max(stack st)
 {
-	return(st.array[get_max_ind(st)]);
+	return (st.array[get_max_ind(st)]);
 }

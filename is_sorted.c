@@ -6,7 +6,7 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 16:10:20 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/11 12:56:16 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/18 23:00:51 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	is_sorted(int *arr, int size)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (i < size)

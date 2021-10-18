@@ -6,7 +6,7 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:06:43 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/18 21:31:23 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/18 23:01:17 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	exec_sa(stack *a)
 {
 	int	buf;
-	buf = a->array[0];
 
+	buf = a->array[0];
 	if (a->size > 1)
 	{
 		a->array[0] = a->array[1];
@@ -24,11 +24,12 @@ void	exec_sa(stack *a)
 	}
 	write(1, "sa\n", 3);
 }
+
 void	exec_sb(stack *b)
 {
 	int	buf;
-	buf = b->array[0];
 
+	buf = b->array[0];
 	if (b->size > 1)
 	{
 		b->array[0] = b->array[1];
