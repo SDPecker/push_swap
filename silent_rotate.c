@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exec_rotate.c                                      :+:      :+:    :+:   */
+/*   silent_rotate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/06 15:06:47 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/18 21:31:23 by amohiam          ###   ########.fr       */
+/*   Created: 2021/10/18 21:12:49 by amohiam           #+#    #+#             */
+/*   Updated: 2021/10/18 21:23:42 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	exec_ra(stack *a)
+void	silent_ra(stack *a)
 {
 	int		i;
 	int		buf;
@@ -28,10 +28,9 @@ void	exec_ra(stack *a)
 		}
 		a->array[i] = buf;
 	}
-	write(1, "ra\n", 3);
 }
 
-void	exec_rb(stack *b)
+void	silent_rb(stack *b)
 {
 	int		i;
 	int		buf;
@@ -47,10 +46,9 @@ void	exec_rb(stack *b)
 		}
 		b->array[i] = buf;
 	}
-	write(1, "rb\n", 3);
 }
 
-void	exec_rra(stack *a)
+void	silent_rra(stack *a)
 {
 	int	i;
 	int	buf;
@@ -66,10 +64,9 @@ void	exec_rra(stack *a)
 		}
 		a->array[i] = buf;
 	}
-	write(1, "rra\n", 4);
 }
 
-void	exec_rrb(stack *b)
+void	silent_rrb(stack *b)
 {
 	int	i;
 	int	buf;
@@ -85,19 +82,16 @@ void	exec_rrb(stack *b)
 		}
 		b->array[i] = buf;
 	}
-	write(1, "rrb\n", 4);
 }
 
-void	exec_rr(stack *a, stack *b)
+void	silent_rr(stack *a, stack *b)
 {
 	silent_ra(a);
 	silent_rb(b);
-	write(1, "rr\n", 3);
 }
 
-void	exec_rrr(stack *a, stack *b)
+void	silent_rrr(stack *a, stack *b)
 {
 	silent_rra(a);
 	silent_rrb(b);
-	write(1, "rrr\n", 4);
 }

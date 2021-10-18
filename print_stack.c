@@ -8,6 +8,5 @@ void	print_stack(stack st)
 	i = 0;
 	while (i < st.size)
 		printf("%i ", st.array[i++]);
-	write(1, "\n", 1);
-	printf("%i\n", st.size);
+	printf("\nSize: %i\nMin_ind: %i\n", st.size, get_min_ind(st));
 }

@@ -6,7 +6,7 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:06:43 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/14 16:53:00 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/18 21:31:23 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	exec_sb(stack *b)
 
 void	exec_ss(stack *a, stack *b)
 {
-	exec_sa(a);
-	exec_sb(b);
+	silent_sa(a);
+	silent_sb(b);
+	write(1, "ss\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:07:38 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/17 20:08:14 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/18 22:48:22 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,28 @@
 int	main(int argc, char **argv)
 {	
 	stack	a;
-	//stack	b;
+	stack	b;
+
 	if (!input_correct(argv, argc))
 	{
 		write(1, "Error\n", 6);
 		return (0);
 	}
 	a = input_to_stack(argv, argc);
-	a = exec_ra(&a);
-	print_stack(a);
-
-
-	//while (1) {} //LEAK TEST
-	
+	b.array = (int *)malloc(sizeof(int) * a.size);
+	b.size = 0;
+	if (has_doubles(a))
+	{
+		write(1, "Error\n", 6);
+		return (0);
+	}
+	if (a.size == 3)
+		sort_3(&a);
+	else if (a.size == 2)
+		sort_2(&a);
+	else if (a.size == 5)
+		sort_5(&a, &b);
+	else
+		print_stack(a);
 	return (0);
 }

@@ -1,50 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   max_min_ind.c                                      :+:      :+:    :+:   */
+/*   silent_swap.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 14:43:25 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/18 22:38:58 by amohiam          ###   ########.fr       */
+/*   Created: 2021/10/18 21:12:25 by amohiam           #+#    #+#             */
+/*   Updated: 2021/10/18 21:23:42 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_max_ind(stack st)
+void	silent_sa(stack *a)
 {
-	int	res;
-	int	i;
+	int	buf;
+	buf = a->array[0];
 
-	res = 0;
-	i = 1;
-	while (i < st.size)
+	if (a->size > 1)
 	{
-		if (st.array[i] > st.array[res])
-			res = i;
-		i++;
+		a->array[0] = a->array[1];
+		a->array[1] = buf;
 	}
-	return (res);
+}
+void	silent_sb(stack *b)
+{
+	int	buf;
+	buf = b->array[0];
+
+	if (b->size > 1)
+	{
+		b->array[0] = b->array[1];
+		b->array[1] = buf;
+	}
 }
 
-int	get_min_ind(stack st)
+void	silent_ss(stack *a, stack *b)
 {
-	int	res;
-	int	i;
-
-	res = 0;
-	i = 1;
-	while (i < st.size)
-	{
-		if (st.array[i] < st.array[res])
-			res = i;
-		i++;
-	}
-	return (res);
-}
-
-int	max(stack st)
-{
-	return(st.array[get_max_ind(st)]);
+	silent_sa(a);
+	silent_sb(b);
 }

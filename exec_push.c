@@ -6,7 +6,7 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:06:55 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/14 18:36:57 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/18 19:28:55 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	exec_pa(stack *a, stack *b)
 
 	i = 0;
 	buf = 0;
-	if (!b->size)
+	if (b->size > 0)
 	{
 		buf = b->array[0];
 		while (i < b->size - 1)
@@ -48,7 +48,7 @@ void	exec_pb(stack *a, stack *b)
 
 	i = 0;
 	buf = 0;
-	if (!a->size)
+	if (a->size > 0)
 	{
 		buf = a->array[0];
 		while (i < a->size - 1)

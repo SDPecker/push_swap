@@ -6,7 +6,7 @@
 /*   By: amohiam <amohiam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:37:43 by amohiam           #+#    #+#             */
-/*   Updated: 2021/10/14 16:56:11 by amohiam          ###   ########.fr       */
+/*   Updated: 2021/10/18 22:41:35 by amohiam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,16 @@ void	sort_5(stack *a, stack *b)
 	{
 		if (a->array[0] > b->array[0])
 			exec_pa(a, b);
+		if ((!get_min_ind(*a) && b->array[0] > max(*a)))
+			exec_pa(a, b);
 		exec_ra(a);
 	}
-	while (get_min_ind(*a) != 0)
+	while (get_min_ind(*a))
 		exec_ra(a);
+}
+
+void	sort_2(stack *a)
+{
+	if (get_max_ind(*a) == 0)
+		exec_sa(a);
 }
